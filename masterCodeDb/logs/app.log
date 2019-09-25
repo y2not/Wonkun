@@ -1,0 +1,14 @@
+[0mGET /api/v1/location?phrase=KOrce [32m200 [0m5.310 ms - 154[0m
+[0mGET /api/v1/organization?phrase=1 [32m200 [0m1.173 ms - 503[0m
+[0mGET /api/v1/organization?phrase=BASE [32m200 [0m1.796 ms - 271[0m
+[0mGET /api/v1/user?phrase=BASE [32m200 [0m1006.322 ms - 39[0m
+[0mGET /api/v1/user?phrase=J [32m200 [0m0.707 ms - 1539[0m
+[0mGET /api/v1/user?phrase=Ji-G [32m200 [0m1.713 ms - 186[0m
+[0mGET /api/v1/service?phrase=J [32m200 [0m1005.591 ms - 39[0m
+[0mGET /api/v1/service?phrase=A [32m200 [0m0.848 ms - 3027[0m
+[0mGET /api/v1/service?phrase=Sage [32m200 [0m0.560 ms - 519[0m
+[0mGET /api/v1/subscription?phrase=Sage [32m200 [0m1007.105 ms - 39[0m
+[0mGET /api/v1/subscription?phrase=A [32m200 [0m0.424 ms - 2583[0m
+[0mGET /api/v1/billPolicy?phrase=A [32m200 [0m1005.419 ms - 291[0m
+[0mGET /api/v1/billPolicy?phrase=A [36m304 [0m1006.449 ms - -[0m
+[0mGET /api/v1/billPolicy?phrase=A [36m304 [0m0.337 ms - -[0m

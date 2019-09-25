@@ -1,0 +1,25 @@
+{
+  "name": "mastercodedb",
+  "version": "1.0.0",
+  "description": "Master Code with Database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Master",
+    "Data",
+    "API",
+    "Auto",
+    "Complete"
+  ],
+  "author": "stormboy@cyberlogitec.com",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "tedious": "^5.0.3"
+  }
+}
