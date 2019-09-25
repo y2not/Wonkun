@@ -1,4 +1,4 @@
-# vue_opus365
+# vue-opus365
 
 ## Project setup
 ```

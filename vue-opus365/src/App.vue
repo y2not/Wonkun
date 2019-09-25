@@ -17,20 +17,20 @@
 
     <v-content>
       <HelloWorld/>
-      <Hello18n/>
+      <I18nWorld/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
-import Hello18n from './components/HelloI18n';
+import I18nWorld from './components/i12nbackup';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Hello18n,
+    I18nWorld,
   },
   data: () => ({
     //

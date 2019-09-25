@@ -1,9 +1,23 @@
 <template>
+
+    
+
+
    <v-card
     class="pa-md-4 mx-lg-auto"
     max-width="344"
   >
     <v-card-text class="font-weight-black">
+      <!-- basic -->
+      <p>{{ $t('key1') }}</p>
+      <!-- nested -->
+      <p>{{ $t('nested.message1') }}</p>
+      <!-- array -->
+      <p>{{ $t('errors[0]') }}</p>
+      <!-- object in array -->
+      <p>{{ $t('errors[1].internal1') }}</p>
+      <!-- array in array -->
+      <p>{{ $t('errors[2][0]') }}</p>
       <h1>Formatting</h1>
       <p>{{ $t('hello', { msg:'1st Wonkun'}) }}</p>
       <p>{{ $t('message.hello', {'0': '2nd Wonkun'}) }}</p>
@@ -41,12 +55,7 @@ export default {
 
 <i18n>
 {
-  "en": {
-    "hello": "hello world!"
-  },
-  "ja": {
-    "hello": "こんにちは、世界！"
-  }
+  
 }
 </i18n>
 
@@ -54,8 +63,8 @@ export default {
 export default {
   name: 'app',
   data () {
-    this.$i18n.locale = 'ja';
-    return { locale: 'ja' } 
+    this.$i18n.locale = 'en';
+    return { locale: 'en' } 
   },
   watch: {
     locale (val) {

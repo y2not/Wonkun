@@ -23,11 +23,28 @@
           <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
         </p>
       </v-flex>
+
+      <v-flex xs12>
+        <p>{{ $t("message.hello") }}</p>
+        <v-divider></v-divider>
+        <p>{{ $d(new Date(), 'short') }}</p>
+        <p>{{ $d(new Date(), 'long', 'ja-JP') }}</p>
+        <v-divider></v-divider>
+        <p>{{ $t('message.hello2', { msg: 'hello' }) }}</p>
+        <v-divider></v-divider>
+        <p>{{ $n(100, 'currency') }}</p>
+        <p>{{ $n(100, 'currency', 'ja-JP') }}</p>
+        <v-divider></v-divider>
+  
+      </v-flex>
+
+      
     </v-layout>
   </v-container>
 </template>
 
 <script>
+
 export default {
   data: () => ({
     ecosystem: [
