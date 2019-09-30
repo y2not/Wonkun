@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="clt-websocket" />
+        <module name="clt-product" />
+        <module name="clt-finance" />
+        <module name="gateway" />
+        <module name="clt-kafka" />
+        <module name="clt-inventory" />
+        <module name="multi-module-library" />
+        <module name="clt-oauth" />
+        <module name="clt-market" />
+        <module name="clt-trade" />
+        <module name="springbootcrudrest" />
+        <module name="membership" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clt" target="1.5" />
+      <module name="clt-finance" target="1.8" />
+      <module name="clt-inventory" target="1.8" />
+      <module name="clt-kafka" target="1.8" />
+      <module name="clt-market" target="1.8" />
+      <module name="clt-oauth" target="1.8" />
+      <module name="clt-product" target="1.8" />
+      <module name="clt-trade" target="1.8" />
+      <module name="clt-websocket" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="membership" target="1.8" />
+      <module name="multi-module-library" target="1.8" />
+      <module name="springbootcrudrest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="clt-finance" options="-parameters" />
+      <module name="clt-inventory" options="-parameters" />
+      <module name="clt-market" options="-parameters" />
+      <module name="clt-oauth" options="-parameters" />
+      <module name="clt-product" options="-parameters" />
+      <module name="clt-trade" options="-parameters" />
+      <module name="clt-websocket" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="membership" options="-parameters" />
+      <module name="multi-module-library" options="-parameters" />
+      <module name="springbootcrudrest" options="-parameters" />
+    </option>
+  </component>
+</project>

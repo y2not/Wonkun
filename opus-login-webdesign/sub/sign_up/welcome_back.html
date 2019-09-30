@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+<meta charset="utf-8"> 
+<title>OPUS</title> 
+</head>
+
+<body>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/jquery-ui.css">
+<link rel="stylesheet" href="../css/sub.css">
+
+<script src="../../js/jquery-1.12.4.min.js"></script>
+
+<style>
+.l_bg_header{width: 100%; min-width:1200px; height: 50px; position: absolute; top: 0px; left: 0px;     z-index: 99;}
+
+.login_tit{font-size: 20px; font-weight: 300;color:#0d1016;}
+.login_tit a{font-weight: bold; color:#4a00e0;}
+
+.left_bg .left_bg_box2 .input_email{width: 785px; height: 48px; border-bottom:1px solid #b2b2b2; color:#0d1016; font-size: 28px;}
+.left_bg .left_bg_box2 .input_psw{width: 785px; height: 48px; border-bottom:1px solid #b2b2b2; color:#0d1016; font-size: 28px;}
+
+.left_bg .left_bg_box2 .sns_tit{font-size: 20px; margin:100px 0px 0px 0px; text-align: center; color: #7f7f7f;}
+.left_bg .left_bg_box2 .icon_box{overflow: hidden; width: 200px;  margin:20px auto 0px 300px; }
+.left_bg .left_bg_box2 .icon_box ul li{float: left; margin:0px 5px;}
+.left_bg .left_bg_box2 .lbnext_btn:hover a{color:#ffffff;}
+
+.left_bg .left_bg_box2  .error_tit{display: none;}
+.left_bg .left_bg_box2  .error_tit .etit{font-size: 20px; margin:50px 0px 0px 0px; text-align: center; color: #7f7f7f;}
+.left_bg .left_bg_box2  .error_tit .etit2{font-size: 20px; margin:0px 0px 0px 0px; font-weight: 500; text-align: center; color: #4a00e0; cursor: pointer;}
+</style>
+
+
+<div class="left_bg_wrap">
+	<div class="l_bg_header">
+		<img src="../../img/logo.png" class="white" style="margin: 54px 0px 0px 63px; float: left;">
+		<div class="login_tit" style="float: right; margin: 54px 63px 0px 0px;">
+			Are you new here? <a href="#">Sign up</a>
+		</div>
+	</div>
+	<div class="left_bg">
+		<div class="left_bg_box1">
+			
+				<p class="left_bg_maintit_white">sign in</p>
+		</div>
+
+		<div class="left_bg_box2">
+			<p class="left_bg_maintit_black">Welcome to <br>OPUS</p>
+		
+			<div class="input_wrap">
+				<p class="input_tit">e-mail</p>
+				<input type="text" placeholder="e-mail" value="" class="input_email" name="input_email">
+			</div>
+
+			<div class="input_wrap" style="margin:30px 0px 0px 0px;">
+				<p class="input_tit">password <span> 6-digit numbers</span></p>
+				<input type="password" placeholder="password" value="" class="input_psw" name="input_psw">
+			</div>
+
+			<div class="error_tit">
+				<p class="etit">Sorry, we couldn’t find an account</p>
+				<p class="etit2" onclick="location.href='#'" >having a trouble to sign in ?</p>
+			</div>
+
+			<button class="lbnext_btn">sign in</button>
+			<p class="sns_tit">Wanna try? ​Instant access by</p>
+
+			<div class="icon_box">
+				<ul>
+					<li><a href="./welcome_back.html"><img src="../../img/ic-logo-wechat-normal.png"></a></li>
+					<li><a href="./welcome_back.html"><img src="../../img/ic-logo-facebook-normal.png"></a></li>
+					<li><a href="./welcome_back.html"><img src="../../img/ic-logo-qq-normal.png"></a></li>
+					<li><a href="./welcome_back.html"><img src="../../img/ic-logo-linkedin-normal.png"></a></li>
+					<li><a href="./welcome_back.html"><img src="../../img/ic-logo-weibo-normal.png"></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="../../js/main.js"></script>
+
+<script>
+
+
+/*
+$(".input_email, .input_psw").keyup(function(){
+	if($("[name=input_email]").val().length != 0 && $("[name=input_psw]").val().length != 0){
+		$(".left_bg .left_bg_box2 .lbnext_btn").css({'border':'1px solid #4a00e0', 'color':'#ffffff', 'background':'#4a00e0'});
+	} else {
+		$(".left_bg .left_bg_box2 .lbnext_btn").css({'border':'1px solid #e8e8e8', color:'#e8e8e8', 'background':'#ffffff'});
+	}
+});
+
+
+var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+$(".left_bg .left_bg_box2 .lbnext_btn").click(function(){
+
+		//유효성 검사 시작
+		if($("[name=input_email]").val() == ""){
+			$("[name=input_email]").focus();
+			return false;
+		}		
+		
+		if(!regEmail.test($('[name=input_email]').val())) {
+			alert('이메일 주소가 유효하지 않습니다');
+			$("[name=input_email]").focus();
+			return false;
+		}	
+
+		if($("[name=input_psw]").val() == ""){
+			$("[name=input_psw]").focus();
+			return false;
+		}
+			
+		if($("[name=input_email]").val() == ""){
+			$(".left_bg .left_bg_box2 .error_tit").css({'display':'none'}); 
+			//아이디 비번이 맞을때 통과
+			alert(성공);
+		} else {
+			$(".left_bg .left_bg_box2 .error_tit").css({'display':'block'}); 
+		}
+});
+*/
+</script>
+
+
+
+
+</body>
+</html>

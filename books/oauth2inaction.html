@@ -1,0 +1,782 @@
+<html>
+<body>
+<div class="toc">
+                                        <h1 id="part_id_1" class="sect0">Part 1: First steps</h1>
+<div class="sect1 available free"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_1"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">1. What is OAuth 2.0 and why should you care?</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_what_is_oauth_2_0">1.1. What is OAuth 2.0?</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_bad_old_days_credential_sharing_and_credential_theft">1.2. The bad old days: credential sharing (and credential theft)</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_secure_delegated_access_to_web_apis">1.3. Secure delegated access to web APIs</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_beyond_http_basic_and_the_password_anti_pattern">1.3.1. Beyond HTTP Basic and the Password Anti-Pattern</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_authorization_delegation_why_it_matters_and_how_it_s_used">1.3.2. Authorization delegation: why it matters and how it's used</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_user_driven_security_and_user_choice">1.3.3. User-driven security and user choice</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_oauth_2_0_the_good_the_bad_and_the_ugly">1.4. OAuth 2.0: the good, the bad and the ugly</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_what_oauth_isn_t">1.5. What OAuth isn't</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-1/section-1-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary">1.6. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_2"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">2. The OAuth Dance</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_overview_of_the_oauth_2_0_protocol_getting_and_using_tokens">2.1. Overview of the OAuth 2.0 protocol: getting and using tokens</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_following_an_oauth_authorization_grant_in_detail">2.2. Following an OAuth authorization grant in detail</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_oauth_s_actors_clients_authorization_servers_resource_owners_and_protected_resources">2.3. OAuth's actors: clients, authorization servers, resource owners, and protected resources</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_oauth_components_tokens_scopes_and_authorization_grants">2.4. OAuth Components: Tokens, scopes, and authorization grants</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_access_tokens">2.4.1. Access tokens</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_scopes">2.4.2. Scopes</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-4-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_refresh_tokens">2.4.3. Refresh tokens</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-4-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_authorization_grants">2.4.4. Authorization grants</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_interactions_between_oauth_s_actors_and_components_back_channel_front_channel_and_endpoints">2.5. Interactions between OAuth's actors and components: back channel, front channel, and endpoints</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-5-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_back_channel_communication">2.5.1. Back-channel Communication</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-5-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_front_channel_communication">2.5.2. Front-channel Communication</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-2/section-2-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_2">2.6. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<h1 id="part_id_2" class="sect0">Part 2: Building an OAuth 2.0 Environment</h1>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_3"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">3. Building a Simple OAuth Client</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_register_an_oauth_client_with_an_authorization_server">3.1. Register an OAuth client with an authorization server</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_get_a_token_using_the_authorization_code_grant_type">3.2. Get a token using the authorization code grant type</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_sending_the_authorization_request">3.2.1. Sending the authorization request</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_processing_the_authorization_response">3.2.2. Processing the authorization response</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_adding_cross_site_protection_with_the_state_parameter">3.2.3. Adding cross site protection with the state parameter</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_use_the_token_with_a_protected_resource">3.3. Use the token with a protected resource</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_refresh_the_access_token">3.4. Refresh the access token</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-3/section-3-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_3">3.5. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_4"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">4. Building a Simple Protected Resource</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_parsing_the_oauth_token_from_the_http_request">4.1. Parsing the OAuth token from the HTTP request</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_validating_the_token_against_our_data_store">4.2. Validating the token against our data store</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_serving_content_based_on_the_token">4.3. Serving content based on the token</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_different_scopes_for_different_requests">4.3.1. Different scopes for different requests</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_different_results_for_different_scopes">4.3.2. Different results for different scopes</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_different_results_for_different_users">4.3.3. Different results for different users</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-3-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_other_access_controls">4.3.4. Other access controls</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-4/section-4-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_4">4.4. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_5"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">5. Building a Simple OAuth Authorization Server</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_managing_oauth_client_registrations">5.1. Managing OAuth client registrations</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_authorizing_a_client">5.2. Authorizing a client</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_authorization_endpoint">5.2.1. The Authorization Endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_authorizing_the_client">5.2.2. Authorizing the client</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_issuing_a_token">5.3. Issuing a token</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_authenticating_the_client">5.3.1. Authenticating the client</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_processing_the_authorization_grant_request">5.3.2. Processing the authorization grant request</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_adding_refresh_token_support">5.4. Adding refresh token support</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_adding_scope_support">5.5. Adding scope support</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-5/section-5-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_5">5.6. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_6"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">6. OAuth 2.0 In the Real World</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_authorization_grant_types">6.1. Authorization Grant Types</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_implicit">6.1.1. Implicit</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_client_credentials">6.1.2. Client Credentials</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_resource_owner_credentials">6.1.3. Resource Owner Credentials</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_assertions">6.1.4. Assertions</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-1-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_choosing_the_appropriate_grant_type">6.1.5. Choosing the Appropriate Grant Type</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_client_deployments">6.2. Client Deployments</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_web_applications">6.2.1. Web Applications</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_browser_applications">6.2.2. Browser Applications</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_native_applications">6.2.3. Native Applications</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-2-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_handling_secrets">6.2.4. Handling Secrets</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-6/section-6-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_6">6.3. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<h1 id="part_id_3" class="sect0">Part 3: OAuth 2.0 Implementation Vulnerabilities</h1>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_7"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">7. Common client vulnerabilities</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_general_client_security">7.1. General client security</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_csrf_attack_against_the_client">7.2. CSRF attack against the client</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_theft_of_client_credentials">7.3. Theft of client credentials</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_registration_of_the_redirect_uri">7.4. Registration of the redirect uri</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_stealing_the_authorization_code_through_the_referrer">7.4.1. Stealing the authorization code through the referrer</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_stealing_the_token_through_an_open_redirector">7.4.2. Stealing the token through an open redirector</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_theft_of_authorization_codes">7.5. Theft of authorization codes</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_theft_of_tokens">7.6. Theft of tokens</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-7" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_native_applications_best_practices">7.7. Native applications best practices</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-7/section-7-8" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_7">7.8. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_8"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">8. Common Protected Resources Vulnerabilities</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_how_are_protected_resources_vulnerable">8.1. How are protected resources vulnerable?</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_design_of_a_protected_resource_endpoint">8.2. Design of a protected resource endpoint</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_how_to_protect_a_resource_endpoint">8.2.1. How to protect a resource endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_adding_implicit_grant_support">8.2.2. Adding implicit grant support</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_token_replays">8.3. Token Replays</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-8/section-8-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_8">8.4. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_9"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">9. Common authorization server vulnerabilities</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_general_security">9.1. General security</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_session_hijacking">9.2. Session hijacking</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_redirect_uri_manipulation">9.3. Redirect URI manipulation</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_client_impersonation">9.4. Client impersonation</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_open_redirector">9.5. Open redirector</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-9/section-9-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_9">9.6. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_10"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">10. Common OAuth Tokens vulnerabilities</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_what_is_a_bearer_token">10.1. What is a bearer token?</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_risks_and_considerations_of_using_bearer_tokens">10.2. Risks and considerations of using bearer tokens</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_how_to_protect_bearer_tokens">10.3. How to protect bearer tokens</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_at_the_client">10.3.1. At the client</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_at_the_authorization_server">10.3.2. At the authorization server</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_at_the_protected_resource">10.3.3. At the protected resource</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_authorization_code">10.4. Authorization code</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_proof_key_for_code_exchange_pkce">10.4.1. Proof Key for Code Exchange (PKCE)</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-10/section-10-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_10">10.5. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<h1 id="part_id_4" class="sect0">Part 4: Taking OAuth Further</h1>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_11"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">11. OAuth Tokens</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_what_are_oauth_tokens">11.1. What are OAuth tokens?</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_structured_tokens_json_web_token_jwt">11.2. Structured Tokens: JSON Web Token (JWT)</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_structure_of_a_jwt">11.2.1. The Structure of a JWT</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_jwt_claims">11.2.2. JWT Claims</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_implementing_jwt_in_our_servers">11.2.3. Implementing JWT in our servers</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_cryptographic_protection_of_tokens_json_object_signing_and_encryption_jose">11.3. Cryptographic protection of tokens: JSON Object Signing and Encryption (JOSE)</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_symmetric_signatures_using_hs256">11.3.1. Symmetric signatures using HS256</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_asymmetric_signatures_using_rs256">11.3.2. Asymmetric signatures using RS256</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_other_token_protection_options">11.3.3. Other token protection options</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_looking_up_a_token_s_information_online_token_introspection">11.4. Looking up a token's information online: token introspection</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_introspection_protocol">11.4.1. The introspection protocol</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_building_the_introspection_endpoint">11.4.2. Building the introspection endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-4-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_introspecting_a_token">11.4.3. Introspecting a token</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-4-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_combining_introspection_and_jwt">11.4.4. Combining introspection and JWT</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_managing_the_token_lifecycle_with_token_revocation">11.5. Managing the token lifecycle with token revocation</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-5-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_token_revocation_protocol">11.5.1. The token revocation protocol</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-5-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_implementing_the_revocation_endpoint">11.5.2. Implementing the revocation endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-5-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_revoking_a_token">11.5.3. Revoking a token</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_oauth_token_lifecycle">11.6. The OAuth token lifecycle</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-11/section-11-7" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_11">11.7. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_12"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">12. Dynamic Client Registration</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_how_the_server_knows_about_the_client">12.1. How the server knows about the client</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_registering_clients_at_runtime">12.2. Registering clients at runtime</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_how_the_protocol_works">12.2.1. How the protocol works</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_why_use_dynamic_registration">12.2.2. Why use dynamic registration?</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_implementing_the_registration_endpoint">12.2.3. Implementing the registration endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-2-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_having_a_client_register_itself">12.2.4. Having a client register itself</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_client_metadata">12.3. Client metadata</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_table_of_core_client_metadata_field_names">12.3.1. Table of core client metadata field names</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_internationalization_of_human_readable_client_metadata">12.3.2. Internationalization of human readable client metadata</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_software_statements">12.3.3. Software statements</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_managing_dynamically_registered_clients">12.4. Managing dynamically registered clients</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_how_the_management_protocol_works">12.4.1. How the management protocol works</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_implementing_the_dynamic_client_registration_management_api">12.4.2. Implementing the dynamic client registration management API</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-12/section-12-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_12">12.5. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available free"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_13"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">13. User Authentication with OAuth 2.0</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_why_oauth_2_0_is_not_an_authentication_protocol">13.1. Why OAuth 2.0 is not an authentication protocol</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-1-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_authentication_vs_authorization_a_delicious_metaphor">13.1.1. Authentication vs. authorization: a delicious metaphor</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_mapping_oauth_to_an_authentication_protocol">13.2. Mapping OAuth to an authentication protocol</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_how_oauth_2_0_uses_authentication">13.3. How OAuth 2.0 uses authentication</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_common_pitfalls_of_using_oauth_2_0_for_authentication">13.4. Common pitfalls of using OAuth 2.0 for authentication</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_access_tokens_as_proof_of_authentication">13.4.1. Access tokens as proof of authentication</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_access_of_a_protected_api_as_proof_of_authentication">13.4.2. Access of a protected API as proof of authentication</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_injection_of_access_tokens">13.4.3. Injection of access tokens</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_lack_of_audience_restriction">13.4.4. Lack of audience restriction</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_injection_of_invalid_user_information">13.4.5. Injection of invalid user information</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-4-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_different_protocols_for_every_potential_identity_provider">13.4.6. Different protocols for every potential identity provider</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_openid_connect_a_standard_for_authentication_and_identity_over_oauth_2_0">13.5. OpenID Connect: a standard for authentication and identity over OAuth 2.0</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_id_tokens">13.5.1. ID tokens</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_userinfo_endpoint">13.5.2. The UserInfo endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_dynamic_server_discovery_and_client_registration">13.5.3. Dynamic server discovery and client registration</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_compatibility_with_oauth_2_0">13.5.4. Compatibility with OAuth 2.0</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-5-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_advanced_capabilities">13.5.5. Advanced capabilities</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_building_a_simple_openid_connect_system">13.6. Building a simple OpenID Connect system</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-6-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_generating_the_id_token">13.6.1. Generating the ID token</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-6-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_creating_the_userinfo_endpoint">13.6.2. Creating the UserInfo endpoint</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-6-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_parsing_the_id_token">13.6.3. Parsing the ID token</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-6-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_fetching_the_userinfo">13.6.4. Fetching the UserInfo</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-13/section-13-7" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_13">13.7. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_14"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">14. Protocols and Profiles using OAuth 2.0</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_user_managed_access_uma">14.1. User Managed Access (UMA)</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-1-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_why_uma_matters">14.1.1. Why UMA matters</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-1-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_how_the_uma_protocol_works">14.1.2. How the UMA protocol works</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_health_relationship_trust_heart">14.2. Health Relationship Trust (HEART)</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_why_heart_matters_to_you">14.2.1. Why HEART matters to you</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_heart_specifications">14.2.2. The HEART specifications</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_heart_mechanical_profiles">14.2.3. HEART mechanical profiles</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-2-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_heart_semantic_profiles">14.2.4. HEART semantic profiles</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_international_government_assurance_igov">14.3. International Government Assurance (iGov)</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_why_igov_matters_to_you">14.3.1. Why iGov matters to you</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_the_future_of_igov">14.3.2. The future of iGov</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-14/section-14-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_14">14.4. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_15"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">15. Beyond Bearer Tokens</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_why_do_we_need_more_than_bearer_tokens">15.1. Why do we need more than bearer tokens?</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_proof_of_possession_pop_tokens">15.2. Proof of Possession (PoP) tokens</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-2-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_requesting_and_issuing_a_pop_token">15.2.1. Requesting and issuing a PoP token</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-2-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_using_a_pop_token_at_a_protected_resource">15.2.2. Using a PoP token at a protected resource</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-2-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_validating_a_pop_token_request">15.2.3. Validating a PoP token request</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_implementing_pop_token_support">15.3. Implementing PoP token support</h3></a>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-3-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_issuing_the_token_and_keys">15.3.1. Issuing the token and keys</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-3-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_creating_the_signed_header_and_sending_it_to_the_resource">15.3.2. Creating the signed header and sending it to the resource</h4></a>
+
+</div>
+<div class="sect3 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-3-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h4 id="_parsing_the_header_introspecting_the_token_and_validating_the_signature">15.3.3. Parsing the header, introspecting the token, and validating the signature</h4></a>
+
+</div>
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_tls_token_binding">15.4. TLS token binding</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-15/section-15-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_15">15.5. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<h1 id="part_id_5" class="sect0">Part 5: Finally</h1>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="chapter_id_16"><a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">16. Summary and conclusions</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_right_tool">16.1. The right tool</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-2" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_making_key_decisions">16.2. Making key decisions</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-3" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_wider_ecosystem">16.3. The wider ecosystem</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-4" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_community">16.4. The community</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-5" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_the_future">16.5. The future</h3></a>
+
+</div>
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/chapter-16/section-16-6" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_summary_16">16.6. Summary</h3></a>
+
+</div>
+</div>
+</div>
+<h1 id="part" class="sect0">Appendixes</h1>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/appendix-a/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="_an_introduction_to_our_code_framework"><a href="https://livebook.manning.com/book/oauth-2-in-action/appendix-a" title="Read in liveBook" class="read-in-livebook" target="_blank"><span class="unit-link chap-link">Appendix A: An Introduction to Our Code Framework</span></a><a class="toc-controllo toc-retracto"><span class="fa fa-caret-right expando" title="Expand"></span><span class="fa fa-caret-down retracto" title="Collapse"></span></a></h2>
+<div class="sectionbody shown-toc">
+<div class="sect2 shown-toc">
+<a href="https://livebook.manning.com/book/oauth-2-in-action/appendix-a/section-a-1" title="Read in liveBook" class="read-in-livebook" target="_blank"><h3 id="_an_introduction_to_our_code_framework_2">A.1. An Introduction to Our Code Framework</h3></a>
+
+</div>
+</div>
+</div>
+<div class="sect1 available"><span class="book_actions"><a class="view-in-livebook" href="https://livebook.manning.com/book/oauth-2-in-action/appendix-b/" title="Read in liveBook" target="_blank"><span class="sr-only">Read in liveBook</span></a></span>
+<h2 id="_extended_code_listings"><a href="https://livebook.manning.com/book/oauth-2-in-action/appendix-b" title="Read in liveBook" class="read-in-livebook" target="_blank">Appendix B: Extended Code Listings</a></h2>
+<div class="sectionbody hidden-toc">
+
+</div>
+</div>
+</div>
+</body>
+</html>

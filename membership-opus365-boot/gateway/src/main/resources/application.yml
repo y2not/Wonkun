@@ -1,0 +1,41 @@
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: default
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+  cloud:
+    gateway:
+      routes:
+        - id: oauth
+          uri: http://localhost:8090
+          predicates:
+            - Path=/oauth/**
+        - id: user
+          uri: http://localhost:8081
+          predicates:
+            - Path=/user/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 8080

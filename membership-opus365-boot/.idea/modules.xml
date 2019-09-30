@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/clt.iml" filepath="$PROJECT_DIR$/clt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance/clt-finance.iml" filepath="$PROJECT_DIR$/finance/clt-finance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory/clt-inventory.iml" filepath="$PROJECT_DIR$/inventory/clt-inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafkaSample/clt-kafka.iml" filepath="$PROJECT_DIR$/kafkaSample/clt-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/market/clt-market.iml" filepath="$PROJECT_DIR$/market/clt-market.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth/clt-oauth.iml" filepath="$PROJECT_DIR$/oauth/clt-oauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product/clt-product.iml" filepath="$PROJECT_DIR$/product/clt-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trade/clt-trade.iml" filepath="$PROJECT_DIR$/trade/clt-trade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket/clt-websocket.iml" filepath="$PROJECT_DIR$/websocket/clt-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/membership/membership.iml" filepath="$PROJECT_DIR$/membership/membership.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/multi-module-library.iml" filepath="$PROJECT_DIR$/library/multi-module-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/membership/springbootcrudrest.iml" filepath="$PROJECT_DIR$/membership/springbootcrudrest.iml" />
+    </modules>
+  </component>
+</project>
