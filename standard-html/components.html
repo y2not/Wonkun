@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OPUS Components</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="./css/opus.min.css" />
+  <body>
+    <!-- 일반적인 입력 -->
+    <div class="ui input">
+      <div class="ui pointing below label">
+        Please enter a value
+      </div>
+      <input type="text" placeholder="Search..." />
+    </div>
+    <!-- 돋보기 아이콘 있는 입력-->
+    <div class="ui icon input">
+      <div class="ui pointing below label">
+        Please enter a value
+      </div>
+      <i class="search icon"> </i>
+      <input type="text" placeholder="Search..." />
+    </div>
+    <!-- code와 붙어있는 입력 -->
+    <div class="ui labeled input">
+      <div class="ui pointing below label">
+        Please enter a value
+      </div>
+      <div class="ui label">
+        http://
+      </div>
+      <input type="text" placeholder="mysite.com" />
+    </div>
+    <!-- 고정 unit가 붙어있는 입력 -->
+    <div class="ui right labeled input">
+      <div class="ui pointing below label">
+        Please enter a value
+      </div>
+      <input type="text" placeholder="Enter weight.." />
+      <div class="ui basic label">
+        kg
+      </div>
+    </div>
+    <!-- 변동 unit가 붙어있는 입력 -->
+    <div class="ui right labeled input">
+      <div class="ui pointing below label">
+        Please enter a value
+      </div>
+      <input type="text" placeholder="Enter weight.." />
+
+      <div class="ui dropdown label" tabindex="0">
+        <div class="text">kg</div>
+        <i class="dropdown icon"> </i>
+        <div class="menu transition hidden" tabindex="-1">
+          <div class="item">kg</div>
+          <div class="item">pound</div>
+        </div>
+      </div>
+    </div>
+    <!-- Radio box -->
+    <div class="grouped fields">
+      <label for="fruit">Select your second favorite fruit:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input
+            type="radio"
+            name="fruit"
+            checked
+            tabindex="0"
+            class="hidden"
+          />
+          <label>
+            ::before "Apples" ::after
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="fruit" tabindex="0" class="hidden" />
+          <label>
+            ::before "Oranges" ::after
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="fruit" tabindex="0" class="hidden" />
+          <label>
+            ::before "Pears" ::after
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="fruit" tabindex="0" class="hidden" />
+          <label>
+            ::before "Grapefruit" ::after
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- Check Box -->
+    <div class="field">
+      <div class="ui checkbox checked">
+        <input type="checkbox" tabindex="0" class="hidden" />
+        <label>
+          I agree to the Terms and Conditions
+        </label>
+      </div>
+    </div>
+    <!-- Simple Button -->
+    <button class="ui button" type="submit">Submit</button>
+    <div class="ui submit button">Submit</div>
+
+    <!-- Hint -->
+    <div class="ui success message">
+      <i class="check circle icon"></i>
+      <span>You're all signed up for the newsletter.</span>
+    </div>
+
+    <!-- Field Error -->
+    <div class="field error">
+      <label>Label Name</label>
+      <div class="ui selection dropdown" tabindex="0">
+        <div class="default text">Select one</div>
+        <i class="dropdown icon"></i>
+        <input type="hidden" name="gender" />
+        <div class="menu" tabindex="-1">
+          <div class="item" data-value="male">Male</div>
+          <div class="item" data-value="female">Female</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Area -->
+    <div class="field">
+      <label>Label Text</label>
+      <textarea rows="5"></textarea>
+    </div>
+
+    <!-- Form component -->
+    <form class="ui form segment error">
+      <div class="two fields">
+        <div class="field error">
+          <label>Field 1</label>
+          <input type="text" name="field1" />
+        </div>
+        <div class="field error">
+          <label>Field 2</label>
+          <input type="text" name="field2" />
+        </div>
+        <div class="field error">
+          <label>Field 3</label>
+          <input type="text" name="field3" />
+        </div>
+      </div>
+      <div class="ui primary submit button">Submit</div>
+      <div class="ui error message">
+        <ul class="list">
+          <li>Field 1 must have a value</li>
+        </ul>
+      </div>
+    </form>
+
+    <!-- Multi select -->
+    <div class="ui dropdown selection multiple" tabindex="0">
+      <select name="maxCount" multiple>
+        <option value>Select Values</option>
+        <option value="1" selected>1</option>
+        <option value="2" selected>2</option>
+        <option vaule="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <i class="dropdown icon"></i>
+      <a class="ui label" data-value="1">1<i class="delete icon"></i></a>
+      <div class="default text">Select Values</div>
+      <div class="menu" tabindex="-1">
+        <div class="item active filtered" data-value="1">1</div>
+      </div>
+    </div>
+
+    <!-- Toggle -->
+    <div class="ui toggle checkbox checked">
+      <input type="checkbox" name="public" tabindex="0" class="hidden" />
+      <label>
+        Subscribe to weekly newsletter
+      </label>
+    </div>
+
+    <!-- drop down button -->
+    <div class="ui compact menu">
+      <div class="ui simple dropdown item">
+        Dropdown
+        <i class="dropdown icon"> </i>
+        <div class="menu">
+          <div class="item">Choice 1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- round icon button -->
+    <button class="ui circular facebook icon button">
+      <i class="cubes icon"></i>
+    </button>
+
+    <!-- divider -->
+    <div class="ui divider"></div>
+
+    <!-- Label divider-->
+    <h2 class="ui divider header">States</h2>
+  </body>
+</html>
