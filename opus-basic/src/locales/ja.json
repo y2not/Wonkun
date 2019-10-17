@@ -1,0 +1,10 @@
+{
+  "basic.text": "ラベル名",
+  "basic.tooltip": "これはツールチップです",
+  "basic.placeholder": "これはプレースホルダーです",
+  "basic.hint": "これはヒントです",
+  "combobox.text": "ラベル名",
+  "combobox.tooltip": "これはツールチップです",
+  "combobox.placeholder": "これはプレースホルダーです",
+  "combobox.hint": "これはヒントです"
+}

@@ -1,0 +1,10 @@
+{
+  "basic.text": "Label Name",
+  "basic.tooltip": "This is a tooltip",
+  "basic.placeholder": "This is a placeholder",
+  "basic.hint": "This is a hint",
+  "combobox.text": "Label Name",
+  "combobox.tooltip": "This is a tooltip",
+  "combobox.placeholder": "This is a placeholder",
+  "combobox.hint": "This is a hint"
+}

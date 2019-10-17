@@ -1,0 +1,10 @@
+{
+  "basic.text": "라벨명",
+  "basic.tooltip": "이것은 툴팁입니다",
+  "basic.placeholder": "이것은 자리표시자입니다",
+  "basic.hint": "이것은 힌트입니다.",
+  "combobox.text": "라벨명",
+  "combobox.tooltip": "이것은 툴팁입니다",
+  "combobox.placeholder": "이것은 자리표시자입니다",
+  "combobox.hint": "이것은 힌트입니다."
+}
