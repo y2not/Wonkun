@@ -5,11 +5,25 @@ import i18n from './i18n';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Routes from './routes/routes';
+// import 'prismjs';
+import './plugins/prism';
+import VuePrism from 'vue-prism';
+// import VueClipboard from 'vue-clipboard2';
+// import VuePrismEditor from "vue-prism-editor";
+// import "vue-prism-editor/dist/VuePrismEditor.css"; // import the styles
 
 Vue.config.productionTip = false;
+// VueClipboard.config.authSetContainer = true;
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(VuePrism);
+// Vue.use(VueClipboard);
+
+// import 'prismjs/themes/prism-coy.css';
+import './plugins/prism.css';
+
+// Vue.component("prism-editor", VuePrismEditor);
 
 // Register international date format
 // const dateTimeFormats = {

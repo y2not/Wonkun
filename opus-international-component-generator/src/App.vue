@@ -1,13 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      color="indigo darken-2"
-      dark
-      prominent
-      scroll-target="#scrolling-techniques"
-      app
-      fixed
-    >
+    <v-app-bar color="indigo darken-2" dark prominent app fixed>
       <app-header />
     </v-app-bar>
 

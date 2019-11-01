@@ -65,13 +65,6 @@ export default {
   max-width: 800px;
   margin: 0px auto;
 }
-.single-label {
-  padding: 20px;
-  margin: 20px 0;
-  box-sizing: border-box;
-  background: #eee;
-  border: 1px dotted #aaa;
-}
 
 #show-labels a {
   color: #444;

@@ -1,3 +1,12 @@
 {
-  "message": "hello i18n !!"
+  "signin": "sign in",
+  "welcome": "Welcome to",
+  "email.title": "e-mail",
+  "email.tooltip": "Input your e-mail address",
+  "email.placeholder": "e-mail",
+  "password": "password",
+  "newhere": "Are you new here? ",
+  "signup": "Sign up",
+  "instantaccess": "Wanna try? Instant access by",
+  "6-digit-number": "6-digit numbers"
 }

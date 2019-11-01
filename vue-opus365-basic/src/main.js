@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify';
 import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';
 import { store } from './store';
+import i18n from './i18n';
 
 Vue.config.productionTip = false;
 
@@ -13,12 +14,12 @@ Vue.use(VueI18n);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-const messages = {};
+// const messages = {};
 
-const i18n = new VueI18n({
-  locale: 'en',
-  messages
-});
+// const i18n = new VueI18n({
+//   locale: 'en',
+//   messages
+// });
 
 const router = new VueRouter({
   mode: 'history',

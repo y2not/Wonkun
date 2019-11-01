@@ -25,10 +25,10 @@
         </p>
         <form>
           <div class="input_wrap">
-            <p class="input_tit" v-show="useridTitle">{{ $t("email") }}</p>
+            <p class="input_tit" v-show="useridTitle">{{ $t("email.title") }}</p>
             <input
               type="text"
-              v-bind:placeholder="$t('email')"
+              v-bind:placeholder="$t('email.title')"
               value
               class="input_email"
               name="input_email"
@@ -105,8 +105,6 @@ export default {
   data() {
     this.$i18n.locale = "en";
     return {
-      url: "/term",
-      name: "HelloI18n",
       useridTitle: false,
       passwordTitle: false,
       failMessage: false,
@@ -226,32 +224,3 @@ export default {
 
 <style>
 </style>
-
-<i18n>
-{
-  "en": {
-    "tos": "Term of Service",
-    "term": "I accept xxx {0}.",
-    "signin": "sign in",
-    "welcome": "Welcome to",
-    "email": "e-mail",
-    "password": "password",
-    "newhere": "Are you new here? ",
-    "signup": "Sign up",
-    "instantaccess": "Wanna try? Instant access by",
-    "6-digit-number" : "6-digit numbers"
-  },
-  "ja": {
-    "tos": "利用規約",
-    "term": "私は xxx の{0}に同意します。",
-    "signin": "サインイン",
-    "welcome": "へようこそ",
-    "email": "Eメール",
-    "password": "パスワード",
-    "newhere": "ここは初めてですか？ ",
-    "signup": "サインアップ",
-    "instantaccess": "やってみたい？ による即時アクセス",
-    "6-digit-number" : "6桁の数字"
-  }
-}
-</i18n>
