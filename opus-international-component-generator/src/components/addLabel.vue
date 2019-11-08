@@ -17,7 +17,7 @@
       <v-textarea
         counter
         clearable
-        clear-icon="mdi-cancel"
+        clear-icon="mdi-close"
         label="Description"
         v-model.lazy.trim="label.description"
       ></v-textarea>
@@ -36,7 +36,7 @@
 
       <v-text-field v-model.lazy.trim="label.maxLength" label="Max Length"></v-text-field>
       <div v-bind:key="language.id" v-for="language in languages">
-        <p class="display-1">{{language.label}} Label</p>
+        <p class="display-1">{{ language.label }} Label</p>
         <v-col>
           <v-text-field
             v-model.lazy.trim="language.name"
@@ -86,17 +86,17 @@
       <v-checkbox v-model="label.showTooltip" :label="'Show Tooltip?'"></v-checkbox>
 
       <hr />
-      <button v-on:click.prevent="post">Add Message</button>
+      <button v-on:click.prevent="post">Add Label</button>
     </v-form>
     <div id="Preview" v-show="submitted">
       <label>Code:</label>
-      <span>{{label.code}}</span>
+      <span>{{ label.code }}</span>
       <label>Fallback Name:</label>
-      <span>{{label.fallbackName}}</span>
+      <span>{{ label.fallbackName }}</span>
       <label>Abbreviation:</label>
-      <span>{{label.abbreviation}}</span>
+      <span>{{ label.abbreviation }}</span>
       <label>Description:</label>
-      <span>{{label.description}}</span>
+      <span>{{ label.description }}</span>
     </div>
     <div v-if="submitted">
       <v-alert type="success" border="left" color="pink darken-1" dark>Thanks for adding new label</v-alert>
@@ -106,7 +106,6 @@
 
 <script>
 // Imports
-
 export default {
   data() {
     return {
@@ -188,8 +187,8 @@ export default {
           "https://emaily-prod-245213.firebaseio.com/labels.json",
           this.label
         )
-        .then(function(data) {
-          alert(data);
+        .then(function() {
+          // alert(data);
           this.submitted = true;
         });
     }

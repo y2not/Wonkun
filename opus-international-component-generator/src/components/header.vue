@@ -48,12 +48,13 @@
       </v-menu>
 
       <router-link to="/showInternalization" exact>
-        <v-btn color="secondary" class="ma-2"
-          >Show predefine internalization</v-btn
-        >
+        <v-btn color="secondary" class="ma-2">Show predefine internalization</v-btn>
       </router-link>
       <router-link to="/dynamicComponents" exact>
         <v-btn color="secondary" class="ma-2">Test Dynamic Tabs</v-btn>
+      </router-link>
+      <router-link to="/chartSample" exact>
+        <v-btn color="secondary" class="ma-2">Chart Sample</v-btn>
       </router-link>
     </v-row>
   </div>

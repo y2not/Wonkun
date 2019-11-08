@@ -4,27 +4,22 @@
     <input type="text" v-model="search" placeholder="search labels" />
     <v-divider></v-divider>
     <v-container class="lighten-5">
-      <v-row no-gutters style="height: 1000px;">
-        <template v-for="result in filteredItems">
-          <v-col :key="result.id">
-            <v-card class="ma-2 pa-2" width="350px" outlined tile>
-              <v-card-text>
-                <p class="display-1 text--primary">{{ result.fallbackName }}</p>
-
-                <p class="text--primary">Code: {{ result.code }}</p>
-                <p class="text--primary">Abbreviation: {{ result.abbreviation }}</p>
-                <p class="text--primary">Description: {{ result.description }}</p>
-                <ul>
-                  <li :key="language.id" v-for="language in result.languageName">{{language.code}}</li>
-                </ul>
-                <router-link v-bind:to="'/label/add/' + result.id">
-                  <v-btn text color="deep-purple accent-4">See More</v-btn>
-                </router-link>
-              </v-card-text>
-            </v-card>
-          </v-col>
+      <v-data-table
+        :headers="headers"
+        :items="results"
+        :search="search"
+        multi-sort
+        class="elevation-1"
+      >
+        <template v-slot:item.showTooltip="{ item }">
+          <v-icon :color="red" v-show="item.showTooltip">mdi-check-circle-outline</v-icon>
         </template>
-      </v-row>
+        <template v-slot:item.edit="{ item }">
+          <router-link v-bind:to="'/label/add/' + item.id">
+            <v-icon clas="mr-2">mdi-playlist-edit</v-icon>
+          </router-link>
+        </template>
+      </v-data-table>
     </v-container>
   </div>
 </template>
@@ -32,12 +27,26 @@
 <script>
 // Imports
 import searchMixin from "../mixins/searchMixin";
-
 export default {
   data() {
     return {
       results: [],
-      search: ""
+      search: "",
+      headers: [
+        {
+          text: "Code",
+          align: "left",
+          sortable: true,
+          value: "code"
+        },
+        { text: "Fallback Name", value: "fallbackName" },
+        { text: "Abbreviation", value: "abbreviation" },
+        { text: "Tooltip", value: "showTooltip" },
+        { text: "Actions", align: "center", sortable: false, value: "edit" }
+      ],
+      errorMessage: "",
+      showError: false,
+      loading: true
     };
   },
   created() {
@@ -54,6 +63,11 @@ export default {
         }
         this.results = resultsArray;
         // console.log(this.results);
+      })
+      .catch(err => {
+        this.errorMessage = err.response.error;
+        this.showError = true;
+        this.loading = false;
       });
   },
   mixins: [searchMixin]
@@ -65,7 +79,6 @@ export default {
   max-width: 800px;
   margin: 0px auto;
 }
-
 #show-labels a {
   color: #444;
   text-decoration: none;

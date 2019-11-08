@@ -23,14 +23,20 @@
 
     <h2>Selected Labels</h2>
     <v-expansion-panels :focusable="focusable">
-      <v-expansion-panel v-for="(item,i) in selectedItems" :key="i" class="pa-2">
-        <v-expansion-panel-header>{{item}}</v-expansion-panel-header>
+      <v-expansion-panel
+        v-for="(item, i) in selectedItems"
+        :key="i"
+        class="pa-2"
+      >
+        <v-expansion-panel-header>{{ item }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-          {{item}}
-          abcdefgfsakfjasklfjsklfjslfkjaslf
-          sfjlasfjsklfjslafjaslfjasklfjsalkfjas
-          asfjaslkfjsalfjslfjasl;fjaslfjaslfsjalf
-          asfjlasfjsldkfjaslfjlasdkfjklasjfwklrjqweklasfjlasfjsldkfjaslfjlasdkfjklasjfwklrjqweklasfjlasfjsldkfjaslfjlasdkfjklasjfwklrjqwekl
+          <inputNormal
+            :id="basic.comid"
+            :value="basic.value"
+            :is-readonly="basic.readonly"
+            :is-mandatory="basic.mandatory"
+            :is-show="basic.show"
+          ></inputNormal>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <span>
@@ -50,6 +56,7 @@
 // Imports
 // import PrismEditor from "vue-prism-editor";
 // import "vue-prism-editor/dist/VuePrismEditor.css"; // import the styles
+import inputNormal from "./templates/InputNormal.vue";
 export default {
   data() {
     return {
@@ -64,7 +71,14 @@ export default {
       snackbar: false,
       text: "Nothing is selected!",
       top: true,
-      color: "error"
+      color: "error",
+      basic: {
+        comid: "111",
+        value: "ABCDE",
+        readonly: false,
+        mandatory: true,
+        show: true
+      }
     };
   },
   methods: {
@@ -93,9 +107,10 @@ export default {
       }
     }
   },
-  // components: {
-  //   PrismEditor
-  // },
+  components: {
+    // PrismEditor
+    inputNormal
+  },
   created() {
     this.$http
       .get("https://emaily-prod-245213.firebaseio.com/labels.json")
@@ -118,13 +133,23 @@ export default {
 </script>
 
 <style scoped>
+.my-editor {
+  height: 300px;
+  color: indigo;
+  line-height: 24px;
+  background-color: #f5f5f5;
+}
 #generate-labels {
   max-width: 800px;
   margin: 0px auto;
 }
-
 #generate-labels a {
   color: #444;
   text-decoration: none;
+}
+.label-input {
+  padding: 8px;
+  width: 91%;
+  box-sizing: border-box;
 }
 </style>
