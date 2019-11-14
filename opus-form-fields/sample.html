@@ -27,14 +27,38 @@
               OPUS Form Field Set
             </legend>
 
-            <h2>일반 + Avatar Input</h2>
+            <h2>일반 Input</h2>
+            <dl class="input-item">
+              <dt class="label">{{Label Name}}</dt>
+              <dd>
+                <div class="input-box">
+                  <input
+                    type="text"
+                    name
+                    class="input middle-size"
+                    id
+                    readonly
+                    value="abcdefg"
+                  />
+                  <i class="reset">A</i>
+                </div>
+                <p class="hint"></p>
+              </dd>
+            </dl>
+            <hr />
+            <h2>Avatar Input</h2>
             <dl class="input-item">
               <dt class="label">{{Label Name}}</dt>
               <dd>
                 <div class="input-box">
                   <img src="./assets/face.png" alt="avatar" class="avatar" />
-                  <input type="text" name class="inp middle" id />
-                  <i class="input-reset">A</i>
+                  <input
+                    type="text"
+                    name
+                    class="input middle-size show-avatar mandatory"
+                    id
+                  />
+                  <i class="reset">A</i>
                 </div>
                 <p class="hint"></p>
               </dd>
@@ -44,69 +68,118 @@
             <dl class="input-item">
               <dt class="label">{{Label Name}}</dt>
               <dd>
-                <div class="input-box">
+                <div class="input-box counter">
                   <i class="increase"></i>
-                  <input type="text" name class="inp short" id />
+                  <input type="text" name class="input short-size" id />
                   <i class="decrease"></i>
                 </div>
               </dd>
             </dl>
             <hr />
             <h2>금액</h2>
-            <dl class="">
-              <dt class="label"></dt>
-              <dd class="field">
-                <div>
-                  <div>\</div>
-                  <input />
+            <dl class="input-item">
+              <dt class="label">{{Label Name}}</dt>
+              <dd>
+                <div class="input-box currency">
+                  <input type="text" class="input" value="USD" readonly />
+                  <input
+                    type="text"
+                    name
+                    class="input middle-size"
+                    id
+                    value="1,500.00"
+                  />
                 </div>
               </dd>
             </dl>
             <hr />
             <h2>체크, 스위치</h2>
-            <dl class="">
-              <dt class="label"></dt>
-              <dd class="field">
+            <dl class="input-item">
+              <dt class="label">{{Label Name}}</dt>
+              <dd>
+                <div class="check-box">
                 <label>
                   <input type="checkbox" />
-                  Placeholder
+                  Active
                 </label>
+              </div>
               </dd>
             </dl>
             <hr />
             <h2>코드 이름</h2>
-            <dl class="">
-              <dt class="label"></dt>
-              <dd class="field">
-                <div>
-                  <div>Code</div>
-                  <input type="text" />
+            <dl class="input-item">
+              <dt class="label">{{Label Name}}</dt>
+              <dd>
+                <div class="input-box code-name">
+                  <input type="text" class="input" value="Code" readonly />
+                  <input
+                    type="text"
+                    name
+                    class="input middle-size"
+                    id
+                    value="ABCDE"
+                  />
                   <i class="reset"></i>
                 </div>
                 <p class="hint"></p>
               </dd>
             </dl>
             <hr />
-            <h2>텍스트 필드</h2>
-            <dl class="">
+            <h2>콤보 박스</h2>
+            <dl class="input-item">
               <dt class="label">{{Label Name}}</dt>
-              <dd class="field">
-                <textarea maxlength></textarea>
+              <dd>
+                <div class="combo-box">
+                  <select
+                    class="combo-select ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input"
+                    id
+                    placeholder="Select Type"
+                  >
+                    <option value="">ABC</option>
+                    <option value="">DEF</option>
+                  </select>
+                  <a
+                    tabindex="-1"
+                    class="ui-botton ui-widget ui-button-icon-only custom-combobox-toggle ui-corner-right"
+                    role="button"
+                  >
+                    <span class="ui-icon"></span>
+                    <span class="ui-button-icon-space"></span>
+                  </a>
+                  </span>
+                </div>
+                <p class="hint"></p>
+              </dd>
+            </dl>
+            <hr />
+            <h2>텍스트 필드</h2>
+            <dl class="input-item">
+              <dt class="label">{{Label Name}}</dt>
+              <dd>
+                <textarea
+                  name
+                  id
+                  maxlength="500"
+                  cols="30"
+                  rows="10"
+                  placeholder
+                  spellcheck="false"
+                  class="text-area"
+                ></textarea>
                 <div class="hint"></div>
                 <div class="byte"><span>0</span>/{{ maxlength }}</div>
               </dd>
             </dl>
             <hr />
             <h2>버튼</h2>
-            <div>
-              <button>{{ Button }}</button>
+            <div class="main-button">
+              <button type="button" class="basic" id>{{ Button }}</button>
             </div>
             <hr />
             <h2>툴팁</h2>
-            <div class="tooltip">
-              <div class="tips">
-                <i class="tit"></i>
-                <p class="txt"></p>
+            <div class="tool-tip">
+              <div class="alert" id="i12345">
+                The passwords you entered don't match.
               </div>
             </div>
           </fieldset>

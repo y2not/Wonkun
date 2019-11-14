@@ -3,20 +3,20 @@
   display: inline-block;
 }
 
-.input-box .middle {
+.input-box .middle-size {
   width: 200px;
 }
 
-.input-box .short {
+.input-box .short-size {
   width: 100px;
 }
 
-.input-box .long {
+.input-box .long-size {
   width: 400px;
 }
 
-.input-box .inp {
-  display: block;
+.input-box .input {
+
   height: 30px;
   padding: 0 10px 0 10px;
   border: 1px solid #b4bcc9;
@@ -28,9 +28,92 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.input-box .inp:focus {
-  padding: 0 28px 0 30px;
+.input-box .input:focus {
+  padding: 0 30px 0 10px;
   border: 1px solid #78abea;
+}
+
+.input-box .input:read-only {
+  border: 1px solid #e4e4e6;
+  background: #e4e4e6;
+  pointer-events: none;
+}
+
+.input-box .input.show-avatar {
+  padding: 0 10px 0 30px;
+}
+
+.input-box .input.show-avatar:focus {
+  padding: 0 30px 0 30px;
+  border: 1px solid #78abea;
+}
+
+.input-box .input.warning {
+  border: 1px solid #ff597a;
+}
+
+.input-box .input.mandatory {
+  background: #eff5f8;
+}
+
+.input-box.counter .input {
+  padding: 0 24px 0 10px;
+  text-align: center;
+}
+
+.input-box.counter > .increase {
+  top: 5px;
+  background-position: -20px -60px;
+  vertical-align: middle;
+}
+
+.input-box.counter > .decrease {
+  bottom: 5px;
+  background-position: 0 -60px;
+  vertical-align: middle;
+}
+
+.input-box.counter > i {
+  position: absolute;
+  right: 5px;
+  width: 12px;
+  height: 6px;
+  font-size: 0;
+  background: url(../assets/sprite_common.png) no-repeat;
+}
+
+.input-box.currency:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 45px;
+  height: calc(100% - 6px);
+}
+
+.input-box.currency:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.input-box.currency .input:nth-child(1) {
+  width: 45px;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.input-box.currency .input:nth-child(2) {
+  padding: 0 5px;
+  text-align: right;
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+}
+
+.input-box.currency > input {
+  display: inline-block;
+  min-width: auto;
 }
 
 .input-item {
@@ -65,17 +148,236 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 }
 
-.input-box .input-reset {
+.input-item .reset {
+  display: block;
   position: absolute;
   top: 9px;
   right: 7px;
   width: 14px;
   height: 14px;
-  background: url(../assets/close.png) no-repeat 0px -120px;
+  background: url(../assets/sprite_common.png) no-repeat 0px -120px;
+}
+
+.check-box {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+
+
+.check-box label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  display: none;
+}
+
+.check-box label:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #b4bcc9;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.check-box label:after  {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 13px;
+  height: 9px;
+  background: url(../assets/sprite_common.png) no-repeat -126px 0;
+}
+
+.input-box.code-name:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 45px;
+  height: calc(100% - 6px);
+}
+
+.input-box.code-name:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+  
+.input-box.code-name .input:nth-child(1) {
+  width: 100px;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.input-box.code-name .input:nth-child(2) {
+  padding: 0 5px;
+  text-align: left;
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+}
+
+.input-box.code-name > input {
+  display: inline-block;
+  min-width: auto;
+}
+
+.combo-box {
+  position: relative;
+  display: block;
+  font-size: 14px;
+}
+
+.combo-select {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 5px 34px 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #b4bcc9;
+}
+
+.ui-widget.ui-widget-content {
+  max-width: 360px;
+  max-height: 200px;
+  border: 1px solid #b4bcc9;
+  background: #fff;
+  border-radius: 5px;
+  overflow: auto;
+  font-size: 13px;
+  color: #666;
+  z-index: 10001;
+}
+
+.ui-widget {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 1em;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
+  color: #454545;
+  text-decoration: none;
+}
+
+.custom-combobox-toggle {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  padding: 0;
+  width: 34px;
+  height: 28px;
+  border: none;
+  background: transparent;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 3px;
+}
+
+.ui-button-icon-only {
+
+  box-sizing: border-box;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.ui-button {
+
+  display: inline-block;
+  line-height: normal;
+  margin-right: .1em;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  user-select: none;
+  overflow: visible;
+}
+
+.ui-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -3px;
+  margin-left: -6px;
+  width: 12px;
+  height: 6px;
+  background: url(../assets/sprite_common.png) no-repeat 0 -80px;
+}
+
+.text-area {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #b4bcc9;
+  background: #fff;
+  outline: none;
+  font-size: 13px;
+  resize: vertical;
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.byte {
+  text-align: right;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.main-button > .basic {
+  color: #fff;
+  background: #0b61ca;
+  position: relative;
+  display: inline-block;
+  padding: 0 17px;
+  height: 30px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  vertical-align: top;
+}
+
+.alert {
+  position: relative;
+  padding-left: 25px;
+  font-size: 12px;
+  color: #ff0000;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.alert:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 18px;
+  height: 16px;
+  background: url(../assets/sprite_common.png) no-repeat -126px -100px;
 }
