@@ -1,40 +1,101 @@
 <template>
   <div id="add-message">
-    <h2>Add a New Message</h2>
-    <form v-if="!submitted">
-      <label>Code</label>
-      <input type="text" v-model.lazy.trim="message.code" required />
-      <label>Fallback Memssage</label>
-      <input type="text" v-model.lazy.trim="message.fallbackName" required />
-      <label>Description</label>
-      <textarea v-model.lazy.trim="message.description"></textarea>
-      <label>Reference Code</label>
-      <input type="text" v-model.lazy.trim="message.referenceCode" required />
+    <h2>Add New Message</h2>
+    <v-form ref="form" v-model="valid" lazy-validation v-if="!submitted">
+      <v-text-field
+        v-model.lazy.trim="message.code"
+        v-mask="'XXXXXXXXXXXXXXX'"
+        label="Code"
+        counter
+        maxlength="15"
+        :rules="[v => !!v || 'Code is required']"
+        required
+      ></v-text-field>
+
+      <v-text-field
+        v-model.lazy.trim="message.fallbackName"
+        label="Fallback Message"
+        counter
+        maxlength="80"
+        :rules="[v => !!v || 'Fallback name is required']"
+        required
+      ></v-text-field>
+
+      <v-textarea
+        counter
+        maxlength="3000"
+        clearable
+        clear-icon="mdi-close"
+        label="Description"
+        v-model.lazy.trim="message.description"
+      ></v-textarea>
+
+      <v-text-field
+        v-model.lazy.trim="message.referenceCode"
+        v-mask="'XXXXXXXXXXXXXXX'"
+        label="Reference Code"
+        counter
+        maxlength="15"
+      ></v-text-field>
+
+      <v-autocomplete
+        v-model="message.referenceDomains"
+        :items="domains"
+        chips
+        small-chips
+        label="Reference Domains"
+        multiple
+      ></v-autocomplete>
+
       <div v-bind:key="language.id" v-for="language in languages">
-        <p>{{language.label}} Label</p>
-        <label>Language Message</label>
-        <input type="text" v-model.lazy.trim="language.message" />
+        <p class="display-1">{{ language.label }} Message</p>
+        <v-col>
+          <v-text-field
+            v-model.lazy.trim="language.message"
+            label="Language Message"
+            outlined
+            clearable
+          />
+        </v-col>
       </div>
-      <p>Reference Domains</p>
-      <div id="checkboxes" :key="domain.id" v-for="domain in domains">
-        <label>{{domain}}</label>
-        <input type="checkbox" :value="domain" v-model="message.referenceDomains" />
-      </div>
+
       <hr />
-      <button v-on:click.prevent="post">Add Label</button>
-    </form>
+      <v-btn
+        class="mr-4"
+        color="success"
+        v-on:click.prevent="post"
+        :disabled="!valid"
+        >Add Message</v-btn
+      >
+      <v-btn class="mr-4" color="error" @click="reset">
+        Reset Form
+      </v-btn>
+      <!--
+      <v-btn class="mr-4" color="warning" @click="resetValidation">
+        Reset Validation
+      </v-btn>
+      -->
+      <br />
+      <br />
+    </v-form>
     <div id="Preview" v-show="submitted">
-      <label>Code:</label>
-      <span>{{message.code}}</span>
-      <label>Fallback Message:</label>
-      <span>{{message.fallbackName}}</span>
-      <label>Description:</label>
-      <span>{{message.description}}</span>
-      <label>Reference Code:</label>
-      <span>{{message.referenceCode}}</span>
+      <span
+        ><label>Code: {{ message.code }}</label></span
+      >
+      <span
+        ><label>Fallback Message: {{ message.fallbackName }}</label></span
+      >
+      <span
+        ><label>Description: {{ message.description }}</label></span
+      >
+      <span
+        ><label>Reference Code: {{ message.referenceCode }}</label></span
+      >
     </div>
     <div v-if="submitted">
-      <v-alert type="success" border="left" color="pink darken-1" dark>Thanks for adding new message</v-alert>
+      <v-alert type="success" border="left" color="pink darken-1" dark
+        >Thanks for adding new message</v-alert
+      >
     </div>
   </div>
 </template>
@@ -51,7 +112,8 @@ export default {
         description: "",
         referenceCode: "",
         languageName: [],
-        referenceDomains: []
+        referenceDomains: [],
+        
       },
       languages: [
         {
@@ -75,23 +137,38 @@ export default {
           message: ""
         }
       ],
-      domains: ["Order", "Booking", "Trade", "Partner", "Market"],
-      submitted: false
+      domains: [
+        "Order",
+        "Forwarding",
+        "Warehousing",
+        "Transportation",
+        "Accounting"
+      ],
+      submitted: false,
+      valid: true
     };
   },
   methods: {
     post: function() {
       this.message.languageName = this.languages;
-      this.$http
-        .post(
-          "https://emaily-prod-245213.firebaseio.com/messages.json",
-          this.message
-        )
-        .then(function(data) {
-          alert(data);
-          this.submitted = true;
-        });
+      if (this.$refs.form.validate()) {
+        this.$http
+          .post(
+            "https://emaily-prod-245213.firebaseio.com/messages.json",
+            this.message
+          )
+          .then(function() {
+            // alert(data);
+            this.submitted = true;
+          });
+      }
+    },
+    reset() {
+      this.$refs.form.reset();
     }
+    // resetValidation() {
+    //   this.$refs.form.resetValidation();
+    // }
   }
 };
 </script>
@@ -137,16 +214,5 @@ h3 {
 }
 hr {
   display: none;
-}
-button {
-  display: block;
-  margin: 20px 0;
-  background: crimson;
-  color: #fff;
-  border: 0;
-  padding: 14px;
-  border-radius: 4px;
-  font-size: 18px;
-  cursor: pointer;
 }
 </style>

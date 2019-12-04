@@ -2,17 +2,27 @@
   <div id="show-messages">
     <h1>All Messages</h1>
     <input type="text" v-model="search" placeholder="search messages" />
-    <div :key="result.id" v-for="result in filteredItems" class="single-message">
-      <router-link v-bind:to="'/message/add/' + result.id">
-        <h2>{{ result.fallbackName }}</h2>
-      </router-link>
-      <article>Code: {{ result.code }}</article>
-      <article>Description: {{ result.description }}</article>
-      <article>Reference Code: {{result.referenceCode}}</article>
-      <ul>
-        <li :key="language.id" v-for="language in result.languageName">{{language.code}}</li>
-      </ul>
-    </div>
+    <v-divider></v-divider>
+    <v-container class="lighten-5">
+      <v-data-table
+        :headers="headers"
+        :items="results"
+        :search="search"
+        multi-sort
+        class="elevation-1"
+      >
+        <template v-slot:item.showTooltip="{ item }">
+          <v-icon :color="red" v-show="item.showTooltip"
+            >mdi-check-circle-outline</v-icon
+          >
+        </template>
+        <template v-slot:item.edit="{ item }">
+          <router-link v-bind:to="'/message/add/' + item.id">
+            <v-icon clas="mr-2">mdi-playlist-edit</v-icon>
+          </router-link>
+        </template>
+      </v-data-table>
+    </v-container>
   </div>
 </template>
 
@@ -24,7 +34,21 @@ export default {
   data() {
     return {
       results: [],
-      search: ""
+      search: "",
+      headers: [
+        {
+          text: "Code",
+          align: "left",
+          sortable: true,
+          value: "code"
+        },
+        { text: "Fallback Name", value: "fallbackName" },
+        { text: "Reference Code", value: "referenceCode" },
+        { text: "Actions", align: "center", sortable: false, value: "edit" }
+      ],
+      errorMessage: "",
+      showError: false,
+      loading: true
     };
   },
   created() {
@@ -41,6 +65,11 @@ export default {
         }
         this.results = resultsArray;
         //console.log(this.blogs);
+      })
+      .catch(err => {
+        this.errorMessage = err.response.error;
+        this.showError = true;
+        this.loading = false;
       });
   },
   mixins: [searchMixin]

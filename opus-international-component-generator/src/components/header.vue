@@ -1,6 +1,6 @@
 <template>
   <div style="min-width: 800px;">
-    <h2>OPUS Internationalization Component Generator</h2>
+    <h2>OPUS Component Boiler Plate</h2>
     <v-row justify="center">
       <router-link to="/" exact>
         <v-btn color="secondary" class="ma-2">Home</v-btn>
@@ -50,6 +50,12 @@
       <router-link to="/showInternalization" exact>
         <v-btn color="secondary" class="ma-2">Show predefine internalization</v-btn>
       </router-link>
+      <router-link to="/dynamicComponents" exact>
+        <v-btn color="secondary" class="ma-2">Test Dynamic Tabs</v-btn>
+      </router-link>
+      <router-link to="/chartSample" exact>
+        <v-btn color="secondary" class="ma-2">Chart Sample</v-btn>
+      </router-link>
     </v-row>
   </div>
 </template>
@@ -64,5 +70,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

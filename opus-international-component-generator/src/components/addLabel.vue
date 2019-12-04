@@ -1,42 +1,84 @@
 <template>
   <div id="add-label">
     <h2>Add a New Component</h2>
-    <v-form v-if="!submitted">
+    <v-form ref="form" v-model="valid" lazy-validation v-if="!submitted">
       <h3>Basic</h3>
 
-      <v-text-field v-model.lazy.trim="label.code" label="Code" :rules="rule_required" required></v-text-field>
+      <v-text-field
+        v-model.lazy.trim="label.code"
+        v-mask="'XXXXXXXXXXXXXXX'"
+        label="Code"
+        counter
+        maxlength="15"
+        :rules="rule_code"
+      ></v-text-field>
 
       <v-text-field
         v-model.lazy.trim="label.fallbackName"
         label="Fallback Name"
-        :rules="rule_required"
-        required
+        counter
+        maxlength="80"
+        :rules="[v => !!v || 'Fallback name is required']"
       ></v-text-field>
 
-      <v-text-field v-model.lazy.trim="label.abbreviation" label="Abbreviation"></v-text-field>
+      <v-text-field
+        v-model.lazy.trim="label.abbreviation"
+        label="Abbreviation"
+        counter
+        maxlength="40"
+      ></v-text-field>
+
       <v-textarea
         counter
+        maxlength="3000"
         clearable
-        clear-icon="mdi-cancel"
+        clear-icon="mdi-close"
         label="Description"
         v-model.lazy.trim="label.description"
       ></v-textarea>
 
-      <v-combobox v-model.lazy.trim="label.type" :items="input_type" label="Input Type"></v-combobox>
+      <v-combobox
+        v-model.lazy.trim="label.type"
+        :items="input_type"
+        label="Input Type"
+        :rules="[v => !!v || 'Type is required']"
+        required
+      ></v-combobox>
+
       <v-autocomplete
-        v-model.lazy.trim="label.class"
+        v-model.lazy.trim="label.size"
+        :items="sizes"
+        label="Size"
+        :rules="[v => !!v || 'Size is required']"
+        required
+      ></v-autocomplete>
+
+      <v-autocomplete
+        v-model.lazy.trim="label.classes"
         :items="classes"
-        outlined
-        dense
         chips
         small-chips
         label="Class"
         multiple
       ></v-autocomplete>
 
-      <v-text-field v-model.lazy.trim="label.maxLength" label="Max Length"></v-text-field>
+      <v-autocomplete v-model.lazy.trim="label.mask" :items="masks" label="Masking" clearable></v-autocomplete>
+
+      <v-autocomplete
+        v-model="label.referenceDomains"
+        :items="domains"
+        chips
+        small-chips
+        label="Reference Domains"
+        multiple
+      ></v-autocomplete>
+
+      <v-text-field v-model.lazy.trim="label.maxLength" v-mask="'#####'" label="Max Length"></v-text-field>
+
+      <v-checkbox v-model="label.showTooltip" :label="'Show Tooltip?'"></v-checkbox>
+
       <div v-bind:key="language.id" v-for="language in languages">
-        <p class="display-1">{{language.label}} Label</p>
+        <p class="display-1">{{ language.label }} Label</p>
         <v-col>
           <v-text-field
             v-model.lazy.trim="language.name"
@@ -72,31 +114,35 @@
         </v-col>
       </div>
 
-      <v-autocomplete
-        v-model="label.referenceDomains"
-        :items="domains"
-        outlined
-        dense
-        chips
-        small-chips
-        label="Reference Domains"
-        multiple
-      ></v-autocomplete>
-
-      <v-checkbox v-model="label.showTooltip" :label="'Show Tooltip?'"></v-checkbox>
-
       <hr />
-      <button v-on:click.prevent="post">Add Message</button>
+
+      <v-btn class="mr-4" color="success" v-on:click.prevent="post" :disabled="!valid">Add Label</v-btn>
+      <v-btn class="mr-4" color="error" @click="reset">Reset Form</v-btn>
+      <!--
+      <v-btn class="mr-4" color="warning" @click="resetValidation">
+        Reset Validation
+      </v-btn>
+      -->
+      <br />
+      <br />
     </v-form>
     <div id="Preview" v-show="submitted">
-      <label>Code:</label>
-      <span>{{label.code}}</span>
-      <label>Fallback Name:</label>
-      <span>{{label.fallbackName}}</span>
-      <label>Abbreviation:</label>
-      <span>{{label.abbreviation}}</span>
-      <label>Description:</label>
-      <span>{{label.description}}</span>
+      <span>
+        <label>Code:</label>
+        {{ label.code }}
+      </span>
+      <span>
+        <label>Fallback Name:</label>
+        {{ label.fallbackName }}
+      </span>
+      <span>
+        <label>Abbreviation:</label>
+        {{ label.abbreviation }}
+      </span>
+      <span>
+        <label>Description:</label>
+        {{ label.description }}
+      </span>
     </div>
     <div v-if="submitted">
       <v-alert type="success" border="left" color="pink darken-1" dark>Thanks for adding new label</v-alert>
@@ -116,12 +162,14 @@ export default {
         abbreviation: "",
         description: "",
         type: "",
-        class: [],
+        size: "",
+        mask: "",
         maxLength: null,
         languageName: [],
         referenceDomains: [],
         showTooltip: true
       },
+
       languages: [
         {
           label: "English",
@@ -156,43 +204,103 @@ export default {
           placeHolder: ""
         }
       ],
-      domains: ["Order", "Booking", "Trade", "Partner", "Market"],
-      classes: [
-        "number",
-        "email",
-        "zipcode",
-        "phone",
-        "date",
-        "uppercase",
-        "currency",
-        "readonly"
+      domains: [
+        "Order",
+        "Forwarding",
+        "Warehousing",
+        "Transportation",
+        "Accounting"
       ],
-      input_type: ["textbox", "combobox", "textarea", "checkbox"],
+      classes: ["readonly", "warning", "mandatory", "uppercase"],
+      sizes: ["long", "medium", "short"],
+      masks: [
+        "time",
+        "integer",
+        "decimal",
+        "currency",
+        "only-number",
+        "alphabet-number",
+        "password",
+        "upper-case",
+        "count"
+      ],
+      input_type: [
+        "textbox",
+        "combobox",
+        "textarea",
+        "checkbox",
+        "button",
+        "divider"
+      ],
       submitted: false,
-      rule_required: [value => !!value || "Required."],
-      rule_email: [
-        value => !!value || "Required.",
-        value => (value || "").length <= 20 || "Max 20 characters",
-        value => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return pattern.test(value) || "Invalid e-mail.";
-        }
-      ]
+      // rule_required: [value => !!value || "Required."],
+      // rule_email: [
+      //   value => !!value || "Required.",
+      //   value => (value || "").length <= 20 || "Max 20 characters",
+      //   value => {
+      //     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      //     return pattern.test(value) || "Invalid e-mail.";
+      //   }
+      // ],
+      rule_code: [
+        value => !!value || "Code is required.",
+        value =>
+          this.codeList.findIndex(item => {
+            return item === value;
+          }) || "Code is duplicated"
+      ],
+      errorMessage: "",
+      showError: false,
+      loading: true,
+      codeList: [],
+      valid: true
     };
   },
   methods: {
     post: function() {
       this.label.languageName = this.languages;
-      this.$http
-        .post(
-          "https://emaily-prod-245213.firebaseio.com/labels.json",
-          this.label
-        )
-        .then(function(data) {
-          alert(data);
-          this.submitted = true;
-        });
+      if (this.$refs.form.validate()) {
+        this.$http
+          .post(
+            "https://emaily-prod-245213.firebaseio.com/labels.json",
+            this.label
+          )
+          .then(function() {
+            // alert(data);
+            this.submitted = true;
+          });
+      }
+    },
+    reset() {
+      this.$refs.form.reset();
     }
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+    toUppercase: function(value) {
+      return value.toUpperCase();
+    }
+  },
+  created() {
+    this.$http
+      .get("https://emaily-prod-245213.firebaseio.com/labels.json")
+      .then(function(data) {
+        return data.json();
+      })
+      .then(function(data) {
+        for (let key in data) {
+          this.codeList.push(data[key].code);
+        }
+      })
+      .catch(err => {
+        this.errorMessage = err.response.error;
+        this.showError = true;
+        this.loading = false;
+      });
   }
 };
 </script>
@@ -238,16 +346,5 @@ h3 {
 }
 hr {
   display: none;
-}
-button {
-  display: block;
-  margin: 20px 0;
-  background: crimson;
-  color: #fff;
-  border: 0;
-  padding: 14px;
-  border-radius: 4px;
-  font-size: 18px;
-  cursor: pointer;
 }
 </style>
